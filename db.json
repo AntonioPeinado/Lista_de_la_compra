@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Tomates",
+      "ammount": 5,
+      "comment": "comprar en Dia",
+      "bought": true
+    },
+    {
+      "id": 2,
+      "name": "Queso",
+      "ammount": 1,
+      "comment": "comprar en alcampo", 
+      "bought": false 
+    },
+     {
+       "id": 3,
+       "name": "Pan",
+       "ammount": 1,
+        "comment": "comprar en pan-bueno",
+       "bought": false
+     },
+      {
+        "id": 4,
+        "name": "naranjas",
+        "ammount": 1,
+        "comment": "comprar en frutería",
+        "bought": false
+      }
+  ]
+}
