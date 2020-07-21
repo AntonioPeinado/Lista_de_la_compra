@@ -9,4 +9,3 @@ export const actions = {
     context.commit(MUTATION_TYPES.SET_ITEMS, data);
   },
 };
- 

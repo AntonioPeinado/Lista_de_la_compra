@@ -5,7 +5,7 @@ export class HTTPService {
     this._http = http;
   }
   getAll() {
-    return this._http.get("");
+    return this._http.get('');
   }
 }
 

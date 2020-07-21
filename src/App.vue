@@ -1,22 +1,27 @@
 <template>
-<div>
-  
   <v-app>
-     <router-link to="/"></router-link>
-     <router-link to="/add"></router-link>
+    <v-navigation-drawer app>
+      <!-- -->
+      <Menu />
+    </v-navigation-drawer>
+    <Header />
     <v-main>
-      <router-view></router-view>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
     </v-main>
   </v-app>
-  </div>
 </template>
 
 <script>
-
+import Menu from "./pages/menu/menu";
+import Header from "./pages/menu/header";
 export default {
   name: "App",
-   components: {
- 
-   }
+
+  components: {
+    Menu,
+    Header
+  }
 };
 </script>
