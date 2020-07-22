@@ -1,18 +1,18 @@
 {
   "items": [
     {
-      "id": 1,
-      "name": "Tomates",
-      "ammount": "5 kg",
-      "comment": "comprar en Dia",
-      "bought": true
+      "name": "patatas",
+      "ammount": "4 kg",
+      "comment": "comprar en el dia",
+      "bought": true,
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Queso",
-      "ammount": "1",
-      "comment": "comprar en alcampo",
-      "bought": false
+      "name": "naranjas",
+      "ammount": "4 kg",
+      "comment": "comprar en la frutería",
+      "bought": false,
+      "id": 2
     },
     {
       "id": 3,
@@ -22,12 +22,18 @@
       "bought": false
     },
     {
-      "id": 4,
-      "name": "naranjas",
-      "ammount": "1 kg",
-      "comment": "comprar en frutería",
-      "bought": false
+      "name": "margarina",
+      "ammount": "1",
+      "comment": "comprar en el dia",
+      "bought": true,
+      "id": 4
+    },
+    {
+      "name": "aceite de oliva",
+      "ammount": "5 litros",
+      "comment": "comprar en alcampo",
+      "bought": false,
+      "id": 5
     }
-    
   ]
 }

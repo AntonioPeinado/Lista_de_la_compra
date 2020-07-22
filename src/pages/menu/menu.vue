@@ -45,4 +45,5 @@ export default {
   grid-template-rows: repeat(1, 100%);
   text-align: center;
 }
+
 </style>
