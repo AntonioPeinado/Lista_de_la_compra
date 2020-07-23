@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Menu from "./pages/menu/menu";
-import Header from "./pages/menu/header";
+import Menu from "./components/menu/menu";
+import Header from "./components/menu/header";
 
 export default {
   name: "App",
