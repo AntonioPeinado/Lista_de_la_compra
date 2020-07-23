@@ -41,18 +41,7 @@ export default {
       this.$refs.form.resetValidation();
     },
      details() {
-      this.validate();
-      if (!this.valid) {
-        return;
-      }
-      let model = {
-        name: this.name,
-        ammount: this.ammount,
-        comment: this.comment,
-        bought: false
-      };
-     this.addItem({ model, http: httpService }).then(() => this.reset()); 
-  }
+     
   },
  
 }
