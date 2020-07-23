@@ -29,9 +29,9 @@
       "id": 4
     },
     {
-      "name": "aceite de oliva",
-      "ammount": "5 litros",
-      "comment": "comprar en alcampo",
+      "name": "platanos",
+      "ammount": "2 kg",
+      "comment": "de la frutería juani",
       "bought": false,
       "id": 5
     }

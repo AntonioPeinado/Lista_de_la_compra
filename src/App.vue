@@ -9,7 +9,6 @@
       <v-container fluid>
         <router-view></router-view>
       </v-container>
-      
     </v-main>
   </v-app>
 </template>
@@ -24,7 +23,6 @@ export default {
   components: {
     Menu,
     Header,
-    
-  }
+  },
 };
 </script>

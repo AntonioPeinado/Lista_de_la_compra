@@ -1,22 +1,26 @@
 <template>
-  <v-card outlined>
+  <v-card outlined >
     <v-list-item-title class="title">
       {{product.name}}: =>
       {{product.ammount}}
     </v-list-item-title>
-    <v-card-title>{{product.comment}}</v-card-title>
+    <v-card-title >{{product.comment}}</v-card-title>
 
-    <v-card-actions class="card-switch">
+    <v-card-actions class="card-switch" >
       <v-switch :input-value="product.bought" :loading="loading" @change="update" label="comprado?"></v-switch>
 
       <router-link to="/Details" color="warning">
         <v-icon color="warning" right class="details">mdi-pencil</v-icon>
+       
       </router-link>
+         <v-btn  color="primary"
+      depressed right  class="product__delete" @click="borrar" type="button">Delete</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+ 
 import axios from "axios";
 import debounce from "debounce";
 export default {
@@ -40,21 +44,33 @@ export default {
       }
       this.loading = true;
       this.product.bought = value;
-      axios
-        .patch(`http://localhost:3005/items/${this.product.id}`, {
+      axios.patch(`http://localhost:3005/items/${this.product.id}`, {
           bought: this.product.bought
         })
         .finally(() => {
           this.loading = false;
         });
     }, 1000)
+  },
+     borrar() {
+    
+     axios.remove(`http://localhost:3005/items/${this.product.id}`, { 
+    }).then((id) => {
+      this.items.id.splice(id)
+    })
+   } 
   }
-};
+  
+
 </script>
 
 <style scoped>
 .title {
   text-align: center;
 }
+.product__delete {
+  margin-left: 5rem;
+}
+
 
 </style>

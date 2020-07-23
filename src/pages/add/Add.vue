@@ -27,9 +27,10 @@ import { mapActions } from "vuex";
 import { ACTION_TYPES } from "../../store/actions";
 import { httpService } from "../../http";
 
-const required = msg => value => Boolean(value) || msg;
+const required = (msg) => (value) => Boolean(value) || msg;
 export default {
   name: "Add",
+   
 
   data: () => ({
     valid: false,
@@ -38,12 +39,13 @@ export default {
     ammount: "",
     cantidadRules: [required("Ammount is required")],
     comment: "",
-    commentRules: [required("Comment is required")]
+    commentRules: [required("Comment is required")],
+   
   }),
 
   methods: {
     ...mapActions({
-      addItem: ACTION_TYPES.ADD_ITEM
+      addItem: ACTION_TYPES.ADD_ITEM,
     }),
     validate() {
       this.$refs.form.validate();
@@ -67,11 +69,13 @@ export default {
         name: this.name,
         ammount: this.ammount,
         comment: this.comment,
-        bought: false
+        bought: false,
       };
+     
       this.addItem({ model, http: httpService }).then(() => this.reset());
-    }
-  }
+      
+    },
+  },
 };
 </script>
 <style scoped>

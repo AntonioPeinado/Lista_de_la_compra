@@ -1,23 +1,27 @@
 <template>
   <div class="conter">
-    <v-form ref="form" v-model="valid" class="form" lazy-validation required disabled="true">
+    <v-form ref="form" v-model="valid"  class="form" lazy-validation required :disabled="true">
       <v-text-field :rules="productRules" label="Product" v-model="name"></v-text-field>
 
       <v-text-field :rules="cantidadRules" label="Ammount" v-model="ammount" ></v-text-field>
 
       <v-text-field :rules="commentRules" label="Comment" v-model="comment"></v-text-field>
 
-      <v-btn disabled="true" color="primary" class="mr-4" @click="validate" >Validate</v-btn>
+      <v-btn color="primary" class="mr-4" @click="validate" :disabled="true">Validate</v-btn>
 
-      <v-btn color="secondary" class="mr-4" @click="reset" disabled="true">Reset Form</v-btn>
+      <v-btn color="secondary" class="mr-4" @click="reset" :disabled="true">Reset Form</v-btn>
 
       <v-btn color="warning" @click="resetValidation" >Edit <v-icon right>mdi-pencil</v-icon></v-btn>
+
+   
+      
     </v-form>
   </div>
 </template>
 
 <script>
-import { httpService } from "../../http"; 
+
+//import { httpService } from "../../http"; 
 const required = msg => value => Boolean(value) || msg;
 export default {
   name: "Details",
@@ -40,9 +44,13 @@ export default {
     resetValidation() {
       this.$refs.form.resetValidation();
     },
-     details() {
-     
+     habilitar() {
+      
+     return ;
   },
+  
+},
+ 
  
 }
 </script>
