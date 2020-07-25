@@ -10,4 +10,12 @@ export const mutations = {
          [MUTATION_TYPES.ADD_ITEM](state, item) {
            state.items.push(item);
          },
+         DELETE_CAR(state, car) {
+           var index = state.cars.findIndex((c) => c.id === car.id);
+           state.cars.splice(index);
+         },
+         DETAILS_CAR(state, car) {
+           var index = state.cars.findIndex((c) => c.id === car.id);
+           state.cars.splice(index);
+         },
        };

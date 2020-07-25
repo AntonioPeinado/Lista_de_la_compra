@@ -50,7 +50,7 @@ export default {
 }
 
 .list-items {
-  background-color: rgb(230, 247, 241);
+  background-color: rgb(246, 252, 252);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.418);
 }
 

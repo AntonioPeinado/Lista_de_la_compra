@@ -10,11 +10,11 @@ export class HTTPService {
          post(model) {
            return this._http.post("", model);
          }
-         getId(model,id) {
-           return this._http.get("",model, id);
+         getId(id) {
+           return this._http.get(id);
          }
-         remove(model,id) {
-           return this._http.remove("", model, id);
+         delete(id) {
+           return this._http.delete(id);
          }
        }
 

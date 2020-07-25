@@ -1,67 +1,83 @@
 <template>
-  <v-card outlined >
+  <v-card outlined>
     <v-list-item-title class="title">
       {{product.name}}: =>
       {{product.ammount}}
     </v-list-item-title>
-    <v-card-title >{{product.comment}}</v-card-title>
+    <v-card-title>{{product.comment}}</v-card-title>
 
-    <v-card-actions class="card-switch" >
+    <v-card-actions class="card-switch">
       <v-switch :input-value="product.bought" :loading="loading" @change="update" label="comprado?"></v-switch>
 
-      <router-link to="/Details" color="warning">
+      <router-link :to="`/${product.id}`" color="warning" >
         <v-icon color="warning" right class="details">mdi-pencil</v-icon>
-       
       </router-link>
-         <v-btn  color="primary"
-      depressed right  class="product__delete" @click="borrar" type="button">Delete</v-btn>
+
+      <v-btn
+        color="primary"
+        depressed
+        right
+        class="product__delete"
+        @click="deleteCar"
+        type="button"
+      >Delete</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
- 
 import axios from "axios";
 import debounce from "debounce";
+
+
 export default {
   name: "Product",
   data() {
     return {
       loading: false,
-      initialBounght: this.product.bought
+      initialBounght: this.product.bought,
     };
+
   },
   props: {
     product: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
-    update: debounce(function(value) {
+    update: debounce(function (value) {
       if (value === this.product.bought) {
         return;
       }
       this.loading = true;
       this.product.bought = value;
-      axios.patch(`http://localhost:3005/items/${this.product.id}`, {
-          bought: this.product.bought
+      axios
+        .patch(`http://localhost:3005/items/${this.product.id}`, {
+          bought: this.product.bought,
         })
         .finally(() => {
           this.loading = false;
         });
-    }, 1000)
-  },
-     borrar() {
+    }, 1000),
+    deleteCar({ commit }, id) {
+      axios
+        .delete(`http://localhost:3005/items/${this.product.id}`)
+        .then(() => {
+          commit("DELETE_CAR", id);
+        });
+    },
     
-     axios.remove(`http://localhost:3005/items/${this.product.id}`, { 
-    }).then((id) => {
-      this.items.id.splice(id)
-    })
-   } 
-  }
-  
+     detailsCar({commit}, id) {
+      axios
+        .getId(`http://localhost:3005/items/${this.product.id}`)
+        .then(() => {
+          commit("DETAILS_CAR", id);
+        });
+    },
 
+  },
+};
 </script>
 
 <style scoped>
@@ -71,6 +87,4 @@ export default {
 .product__delete {
   margin-left: 5rem;
 }
-
-
 </style>

@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <v-navigation-drawer app>
+    <v-navigation-drawer app class="drawer">
       <!-- -->
       <Menu />
     </v-navigation-drawer>
     <Header />
-    <v-main>
+    <v-main class="main">
       <v-container fluid>
         <router-view></router-view>
       </v-container>
@@ -26,3 +26,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+  .main {
+   background-image: url(imagenFondo.jpg);
+   background-repeat: repeat;
+  }
+</style>

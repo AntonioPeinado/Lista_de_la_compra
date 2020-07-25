@@ -2,36 +2,36 @@
   "items": [
     {
       "name": "patatas",
-      "ammount": "4 kg",
-      "comment": "comprar en el dia",
+      "ammount": "5 kg",
+      "comment": "frutería Juani",
       "bought": true,
       "id": 1
     },
     {
-      "name": "naranjas",
-      "ammount": "4 kg",
-      "comment": "comprar en la frutería",
+      "name": "azúcar",
+      "ammount": "1 kg",
+      "comment": "comprar en Dia",
       "bought": false,
       "id": 2
     },
     {
-      "id": 3,
-      "name": "Pan",
-      "ammount": "1",
-      "comment": "comprar en pan-bueno",
-      "bought": false
+      "name": "pan",
+      "ammount": "2 barras",
+      "comment": "panadería buen-pan",
+      "bought": false,
+      "id": 3
     },
     {
-      "name": "margarina",
-      "ammount": "1",
-      "comment": "comprar en el dia",
-      "bought": true,
+      "name": "arroz",
+      "ammount": "1 kg",
+      "comment": "comprar en Ahorramas",
+      "bought": false,
       "id": 4
     },
     {
       "name": "platanos",
       "ammount": "2 kg",
-      "comment": "de la frutería juani",
+      "comment": "comprar el la frutería",
       "bought": false,
       "id": 5
     }

@@ -86,7 +86,7 @@ export default {
   display: flex;
   justify-content: center;
   border: 1px solid black;
-  background-color: rgb(219, 248, 248);
+  background-color: rgb(232, 241, 241);
   width: 80%;
   padding: 2rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.418);
