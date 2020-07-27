@@ -1,18 +1,17 @@
 <template>
   <div class="conter">
-    <v-form ref="form" v-model="valid" class="form" lazy-validation required >
-      <v-text-field :rules="productRules" label="Product" v-model="name">  
-      </v-text-field>
+    <v-form ref="form" v-model="valid" class="form" lazy-validation required>
+      <v-text-field :rules="productRules" label="Product" v-model="name"></v-text-field>
 
-      <v-text-field :rules="cantidadRules" label="Ammount" v-model="ammount"></v-text-field>
+      <v-text-field :rules="cantidadRules" label=" product" v-model="ammount"></v-text-field>
 
       <v-text-field :rules="commentRules" label="Comment" v-model="comment"></v-text-field>
 
-      <v-btn color="primary" class="mr-4" @click="validate" >Validate</v-btn>
+      <v-btn color="primary" class="mr-4" @click="validate">Validate</v-btn>
 
-      <v-btn color="secondary" class="mr-4" @click="reset" >Reset Form</v-btn>
+      <v-btn color="secondary" class="mr-4" @click="reset">Reset Form</v-btn>
 
-      <v-btn color="warning"  type= "button">
+      <v-btn color="warning" type="button">
         Edit
         <v-icon right>mdi-pencil</v-icon>
       </v-btn>
@@ -43,7 +42,6 @@ export default {
     resetValidation() {
       this.$refs.form.resetValidation();
     },
-   
   },
 };
 </script>

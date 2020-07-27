@@ -25,15 +25,8 @@
       "name": "arroz",
       "ammount": "1 kg",
       "comment": "comprar en Ahorramas",
-      "bought": false,
+      "bought": true,
       "id": 4
-    },
-    {
-      "name": "platanos",
-      "ammount": "2 kg",
-      "comment": "comprar el la frutería",
-      "bought": false,
-      "id": 5
     }
   ]
 }
