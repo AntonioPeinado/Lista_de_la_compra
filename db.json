@@ -11,7 +11,7 @@
       "name": "azúcar",
       "ammount": "1 kg",
       "comment": "comprar en Dia",
-      "bought": false,
+      "bought": true,
       "id": 2
     },
     {
@@ -22,11 +22,18 @@
       "id": 3
     },
     {
-      "name": "arroz",
-      "ammount": "1 kg",
-      "comment": "comprar en Ahorramas",
+      "name": "leche",
+      "ammount": "2 litros",
+      "comment": "marca rio",
       "bought": true,
       "id": 4
+    },
+    {
+      "name": "mantequilla",
+      "ammount": "1 tarrina",
+      "comment": "que sea mantequilla",
+      "bought": false,
+      "id": 5
     }
   ]
 }

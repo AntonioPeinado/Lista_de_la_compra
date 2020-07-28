@@ -28,7 +28,7 @@
 <script>
 import axios from "axios";
 import debounce from "debounce";
-
+import { httpService } from '../../http';
 
 export default {
   name: "Product",
@@ -55,27 +55,19 @@ export default {
       axios
         .patch(`http://localhost:3005/items/${this.product.id}`, {
           bought: this.product.bought,
+          
         })
         .finally(() => {
           this.loading = false;
         });
     }, 1000),
-    deleteCar({ commit }, id) {
-      axios
-        .delete(`http://localhost:3005/items/${this.product.id}`)
-        .then(() => {
-          commit("DELETE_CAR", id);
-        });
+    deleteCar() {
+      this.$store.dispatch('DELETE_ITEM',{
+        http: httpService,
+        id: this.product.id
+      })
     },
     
-     detailsCar({commit}, id) {
-      axios
-        .getId(`http://localhost:3005/items/${this.product.id}`)
-        .then(() => {
-          commit("DETAILS_CAR", id);
-        });
-    },
-
   },
 };
 </script>

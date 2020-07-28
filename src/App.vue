@@ -17,6 +17,7 @@
 import Menu from "./components/menu/menu";
 import Header from "./components/menu/header";
 
+
 export default {
   name: "App",
 
@@ -24,6 +25,7 @@ export default {
     Menu,
     Header,
   },
+ 
 };
 </script>
 <style scoped>

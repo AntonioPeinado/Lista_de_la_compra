@@ -14,7 +14,7 @@
 
       <v-text-field label="comment" v-model="comment" :rules="commentRules"></v-text-field>
 
-      <v-btn :disabled="!valid" type="submit" color="primary" class="mr-4" validate>Crear</v-btn>
+      <v-btn :disabled="!valid" type="submit" color="primary" class="mr-4" @click="validate">Crear</v-btn>
       <v-btn color="secondary" type="button" class="mr-4" @click="reset">Reset Form</v-btn>
     </v-form>
   </div>
@@ -30,7 +30,6 @@ import { httpService } from "../../http";
 const required = (msg) => (value) => Boolean(value) || msg;
 export default {
   name: "Add",
-   
 
   data: () => ({
     valid: false,
@@ -40,7 +39,6 @@ export default {
     cantidadRules: [required("Ammount is required")],
     comment: "",
     commentRules: [required("Comment is required")],
-   
   }),
 
   methods: {
@@ -71,9 +69,8 @@ export default {
         comment: this.comment,
         bought: false,
       };
-     
+
       this.addItem({ model, http: httpService }).then(() => this.reset());
-      
     },
   },
 };

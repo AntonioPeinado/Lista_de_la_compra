@@ -1,11 +1,11 @@
 <template>
   <div class="conter">
     <v-form ref="form" v-model="valid" class="form" lazy-validation required>
-      <v-text-field :rules="productRules" label="Product" v-model="name"></v-text-field>
+      <v-text-field :rules="productRules" label="Product" v-model="item.name"></v-text-field>
 
-      <v-text-field :rules="cantidadRules" label=" product" v-model="ammount"></v-text-field>
+      <v-text-field :rules="cantidadRules" label=" amount" v-model="item.ammount"></v-text-field>
 
-      <v-text-field :rules="commentRules" label="Comment" v-model="comment"></v-text-field>
+      <v-text-field :rules="commentRules" label="Comment" v-model="item.comment"></v-text-field>
 
       <v-btn color="primary" class="mr-4" @click="validate">Validate</v-btn>
 
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 const required = (msg) => (value) => Boolean(value) || msg;
 export default {
   name: "Details",
@@ -32,6 +33,14 @@ export default {
     comment: "",
     commentRules: [required("Comment is required")],
   }),
+  computed: {
+    ...mapGetters(['getItemById']),
+    item(){
+      
+    
+      return this.getItemById(this.$route.params.id)
+    }
+  },
   methods: {
     validate() {
       this.$refs.form.validate();
@@ -43,6 +52,7 @@ export default {
       this.$refs.form.resetValidation();
     },
   },
+ 
 };
 </script>
 

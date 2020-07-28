@@ -14,8 +14,9 @@ export class HTTPService {
            return this._http.get(id);
          }
          delete(id) {
-           return this._http.delete(id);
+           return this._http.delete(String(id));
          }
+        
        }
 
 export const httpService = new HTTPService(
